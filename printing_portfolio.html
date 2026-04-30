@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Printing Portfolio | AperExanimus</title>
+    
+    <style>
+        /* --- Global Styles --- */
+        :root {
+            --bg-color: #121212;
+            --text-color: #e0e0e0;
+            --accent-color: #00bcd4; /* Cyan*/
+            --card-bg: #1e1e1e;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 0;
+            border-bottom: 1px solid #333;
+            margin-bottom: 2rem;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- Categories --- */
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .category-header {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* --- Sub-categories Grid --- */
+        .sub-category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        .project-card h3 {
+            color: var(--accent-color);
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>  
+<body>
+
+    <div class="container">
+        <!-- Header & Navigation -->
+        <header>
+            <h1>3D Printing Portfolio</h1>
+            <p>Showcasing functional designs, art, and community projects.</p>
+            
+            <nav>
+                <ul>
+                    <li><a href="#scn">Seattle Community Network</a></li>
+                    <li><a href="#future">Upcoming Posts</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Category 1: Seattle Community Network -->
+            <section id="scn" class="category-section">
+                <div class="category-header">
+                    <h2>Seattle Community Network (SCN)</h2>
+                    <p>Promotional materials designed for community outreach.</p>
+                    <a href="https://www.printables.com/model/276491-nfc-tag-keychains">Original STL file</a>
+                </div>
+            
+                <div class="photo-grid">
+                    
+                    <!-- Item 1 -->
+                    <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <img src="Images/3_tags_glow.jpg" alt="Glow in the dark 3D printed tags">
+                        </div>
+                        <div class="grid-caption">
+                            <h3>Glow-in-the-Dark Tags</h3>
+                            <p>Overture phosphorescent filament with opaque black lines</p>
+                        </div>
+                    </article>
+            
+                    <!-- Item 2 -->
+                    <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <img src="Images/IMG_1526.jpeg" alt="Banner">
+                        </div>
+                        <div class="grid-caption">
+                            <h3>NFC banner on iOS</h3>
+                            <p>Verifying that NFC tags will display SeattleCommunityNetwork.org.</p>
+                        </div>
+                    </article>
+            
+                    <!-- Item 3 (Example of adding more) -->
+                    <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <img src="Images/clear_front1.jpg" alt="Placeholder for future item">
+                        </div>
+                        <div class="grid-caption">
+                            <h3>Transparent PETG</h3>
+                            <p>Transparent shell printed with Overture PETG at 15mm/s to optimize clarity.</p>
+                        </div>
+                    </article>
+            
+                </div>
+            </section>
+
+                <style>
+                    /* --- Photo Grid Specific Styles --- */
+                    .photo-grid {
+                        display: grid;
+                        /* Creates columns that are at least 280px wide, filling available space */
+                        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                        gap: 2rem; /* Space between grid items */
+                        margin-top: 2rem;
+                    }
+                
+                    .grid-item {
+                        background-color: #1e1e1e; /* Slightly lighter than body bg */
+                        border: 1px solid #333;
+                        border-radius: 8px;
+                        overflow: hidden; /* Ensures image doesn't spill out of rounded corners */
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        display: flex;
+                        flex-direction: column;
+                    }
+                
+                    .grid-item:hover {
+                        transform: translateY(-5px); /* Lifts the card slightly on hover */
+                        box-shadow: 0 10px 20px rgba(0, 188, 212, 0.15); /* Cyan glow */
+                        border-color: #00bcd4;
+                    }
+                
+                    .grid-image-wrapper {
+                        width: 100%;
+                        height: 250px; /* Fixed height for uniformity */
+                        overflow: hidden;
+                        background-color: #000;
+                    }
+                
+                    .grid-image-wrapper img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain; /* Contains image inside grid*/
+                        transition: transform 0.5s ease;
+                    }
+                
+                    .grid-item:hover .grid-image-wrapper img {
+                        transform: scale(1.1); /* Zoom effect on hover */
+                    }
+                
+                    .grid-caption {
+                        padding: 1rem;
+                        text-align: center;
+                    }
+                
+                    .grid-caption h3 {
+                        margin: 0 0 0.5rem 0;
+                        font-size: 1.1rem;
+                        color: #fff;
+                    }
+                
+                    .grid-caption p {
+                        margin: 0;
+                        font-size: 0.9rem;
+                        color: #aaa;
+                        line-height: 1.4;
+                    }
+                </style>
+            </section>
+
+            <!-- Placeholder for Future Categories -->
+            <section id="future" class="category-section" style="opacity: 0.6;">
+                <div class="category-header">
+                    <h2>Upcoming Posts</h2>
+                    <p>More categories coming soon: Air Quality Management, Transparent PETG printing and quality control.</p>
+                </div>
+            </section>
+        </main>
+
+        <footer id="contact">
+            <p>Email alias: rapid.schematic659@passmail.net</p>
+        </footer>
+    </div>
+
+</body>
+</html>

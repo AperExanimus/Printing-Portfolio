@@ -1,3 +1,4 @@
+<!-- Rebuild forced on May 1, 2026 -->
 # 🖨️ 3D Printing Portfolio
 HTML mockup to display 3D printing projects and POCs.
 

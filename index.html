@@ -270,7 +270,7 @@ a:hover {
             <section id="scn" class="category-section">
                 <div class="category-header">
                     <h2>Seattle Community Network (SCN)</h2>
-                    <p>Glow in the dark NFC tags designed to promote non-profits. 
+                    <p>Glow in the dark (GITD) NFC tags designed to promote non-profits. 
                     All models contain tags programmed to SeattleCommunityNetwork.org. 
                         Model meshes updated with public domain SVGs to display the Seattle Space Needle.
                     </p>
@@ -307,17 +307,41 @@ a:hover {
                             <p>Front display of black/GITD PLA and transparent blue PETG.</p>
                         </div>
                     </article>
+
+                     <!-- Item 3 -->
+                     <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <img src="Images/base_layer_gitd.jpg" alt="Printing GITD on the base layer and black on subsequent layers. The inverse of my other prints.">
+                        </div>
+                        <div class="grid-caption">
+                            <h3>Inverted GITD and Black PLA</h3>
+                            <p>Print with GITD as the base layer. This will retain less glow since most of the filament is regular black PLA.</p>
+                        </div>
+                    </article>
             
-                    <!-- Item 3 (Example of adding more) -->
+                    <!-- Item 4 -->
                     <article class="grid-item">
                         <div class="grid-image-wrapper">
                             <img src="Images/transparent_gitd.jpg" alt="Clear PETG Demo">
                         </div>
                         <div class="grid-caption">
-                            <h3>PETG and PLA Parts Combo</h3>
+                            <h3>PETG and PLA Parts Combo, Back</h3>
                             <p>Tranparent PETG shell with a glow in the dark PLA center, providing a diffused glow and better durability.</p>
                         </div>
                     </article>
+
+                    <!-- Item 5 -->
+                    <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <img src="Images/micro_nfc1.jpg" alt="Front Display of the Clear PETG, showing the NFC tag silhouette.">
+                        </div>
+                        <div class="grid-caption">
+                            <h3>PETG and PLA Parts Combo, Front</h3>
+                            <p>Demo of how well GITD filament shines through the front of clear PETG.</p>
+                        </div>
+                    </article>
+
+                   
             
                 </div>
             </section>
@@ -358,13 +382,53 @@ a:hover {
                                 <img src="Images/currently_locked_tags.jpg" alt="Currently locked tags documented by color.">
                             </div>
                             <div class="grid-caption">
-                                <h3>Currently locked tags.</h3>
+                                <h3>Currently Locked Tags</h3>
                                 <p>Three tags locked to test out security limitations.</p>
                             </div>
                         </article>
                     </section>
+
+                <!-- Category 3: QR Tags -->
+                <section id="QR" class="category-section">
+                    <div class="category-header">
+                        <h2>QR Code Tests</h2>
+                        <p>Initially I tried to print QR codes to promote SCN. However, getting a proper resolution with a 0.4mm nozzle is not practical considering the size of the tags.</p>
+                    </div>
                 
-                 <!-- Category 3: Clear PETG -->
+                    <div class="photo-grid">
+                        <article class="grid-item">
+                            <div class="grid-image-wrapper">
+                                <img src="Images/qr_error30_blender2.png" alt="QR Code with 30% error correction.">
+                            </div>
+                            <div class="grid-caption">
+                                <h3>QR Code Blend</h3>
+                                <p>QR codes were generated as SVGs with Python QR code library and 30% error. The center mesh was manually removed in blender to add logos.</p>
+                            </div>
+                        </article>
+
+                        <article class="grid-item">
+                            <div class="grid-image-wrapper">
+                                <img src="Images/qr_gcode_issues.png" alt="QR code resolution errors.">
+                            </div>
+                            <div class="grid-caption">
+                                <h3>Slicer Issues with QR Codes</h3>
+                                <p>Example of resolution and slicer issues with QR code. Best results were from squares over 40mm on Prusa Slicer.</p>
+                            </div>
+                        </article>
+
+                        <article class="grid-item">
+                            <div class="grid-image-wrapper">
+                                <img src="Images/qr_iterations.jpg" alt="QR Code Progress from regular PLA to final design with GITD PLA.">
+                            </div>
+                            <div class="grid-caption">
+                                <h3>QR Code Progression</h3>
+                                <p>QR Code Progress from regular PLA to final design with GITD PLA in lower right corner.</p>
+                            </div>
+                        </article>
+
+                    </section>    
+                
+                 <!-- Category 4: Clear PETG -->
                  <section id="NFC" class="category-section">
                     <div class="category-header">
                         <h2>Achieving Transparent PETG</h2>

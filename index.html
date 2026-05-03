@@ -29,6 +29,18 @@
             margin-bottom: 0.5rem;
         }
 
+        /* Add this inside your <style> block */
+a {
+    color: #a4e1f3; /* Change this hex code to your desired color */
+    text-decoration: underline; /* Optional: adds underline */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #e8cdff; /* Color when mouse is over the link */
+    text-decoration: none; /* Removes underline on hover */
+}
+
         img {
             max-width: 100%;
             height: auto;
@@ -258,13 +270,17 @@
             <section id="scn" class="category-section">
                 <div class="category-header">
                     <h2>Seattle Community Network (SCN)</h2>
-                    <p>Glow in the dark NFC tags designed to promote non-profits. <br>
-                    All models contain tags programmed to SeattleCommunityNetwork.org. <br> 
+                    <p>Glow in the dark NFC tags designed to promote non-profits. 
+                    All models contain tags programmed to SeattleCommunityNetwork.org. 
                         Model meshes updated with public domain SVGs to display the Seattle Space Needle.
                     </p>
-                    <a href="https://www.printables.com/model/276491-nfc-tag-keychains">Original STL file by Orax</a> 
+                    <a href="https://seattlecommunitynetwork.org">SCN website.</a> 
                     <br>
-                    <a href="https://www.cnckitchen.com/blog/which-glow-in-the-dark-filament-is-the-best">Information on optimizing filament. </a>
+                    <a href="https://www.svgrepo.com/svg/220978/space-needle-seattle">Public domain vector for Seattle Space Needle.</a> 
+                    <br>
+                    <a href="https://www.printables.com/model/276491-nfc-tag-keychains">Original STL file by Orax.</a> 
+                    <br>
+                    <a href="https://www.cnckitchen.com/blog/which-glow-in-the-dark-filament-is-the-best">CNCKitchen's guide on GITD filament. </a>
                 </div>
             
                 <div class="photo-grid">
@@ -294,7 +310,7 @@
                     <!-- Item 3 (Example of adding more) -->
                     <article class="grid-item">
                         <div class="grid-image-wrapper">
-                            <img src="Images/dual_clear.jpg" alt="Clear PETG Demo">
+                            <img src="Images/transparent_gitd.jpg" alt="Clear PETG Demo">
                         </div>
                         <div class="grid-caption">
                             <h3>Transparent PETG</h3>
@@ -305,13 +321,101 @@
                 </div>
             </section>
 
-               
+                 <!-- Category 2: NFC Tags -->
+                 <section id="NFC" class="category-section">
+                    <div class="category-header">
+                        <h2>NFC Tag Writing and Security</h2>
+                        <p>Writing urls to NFC tags and taking additional measures for security.</p>
+                        <br>
+                        <a href="https://www.cve.org/CVERecord?id=CVE-2016-3761">NFC vulnerability example on Android. </a>
+                    </div>
+                
+                    <div class="photo-grid">
+                        
+                        <article class="grid-item">
+                            <div class="grid-image-wrapper">
+                                <img src="Images/tagomatic.jpg" alt="Demo of writing tags with ESP32 Firmware.">
+                            </div>
+                            <div class="grid-caption">
+                                <h3>Tag Writing</h3>
+                                <p>Writing to tags using a M5Stack Cardputer with Bruce security firmware.</p>
+                            </div>
+                        </article>
+
+                        <article class="grid-item">
+                            <div class="grid-image-wrapper">
+                                <img src="Images/nfc_read_only.png" alt="Demo of blocked write attempt on NFC tag.">
+                            </div>
+                            <div class="grid-caption">
+                                <h3>Tag Lock</h3>
+                                <p>Locking tags to reduce the probability of bad actors rewriting the tags later.</p>
+                            </div>
+                        </article>
+
+                        <article class="grid-item">
+                            <div class="grid-image-wrapper">
+                                <img src="Images/currently_locked_tags.jpg" alt="Currently locked tags documented by color.">
+                            </div>
+                            <div class="grid-caption">
+                                <h3>Currently locked tags.</h3>
+                                <p>Three tags locked to test out security limitations.</p>
+                            </div>
+                        </article>
+                    </section>
+                
+                 <!-- Category 3: Clear PETG -->
+                 <section id="NFC" class="category-section">
+                    <div class="category-header">
+                        <h2>Achieving Transparent PETG</h2>
+                        <p>Demonstrating how to print PETG with better clarity.</p>
+                        <br>
+                        <a href="https://www.printables.com/model/15310-how-to-print-glass">Rygar's guide on clear printing. </a>
+                        <br>
+                        <a href="https://www.cnckitchen.com/blog/transparent-fdm-3d-prints-are-clearly-stronger">CNCKitchen's blog on clear PETG prints. </a>
+
+                    </div>
+                
+                    <div class="photo-grid">
+                        
+                        <article class="grid-item">
+                            <div class="grid-image-wrapper">
+                                <img src="Images/clear_demo1.jpg" alt="Printing a pre-configured 3MF file for optimal clarity.">
+                            </div>
+                            <div class="grid-caption">
+                                <h3>Optimized 3MF Examples</h3>
+                                <p>Demo project from Printables.com. SCN tag model changed to tool tempurature of 265C. 
+                                <br>It is worth noting that CNCKitchen actually found better quality at 220C and that turning off cooling will also impact durability.</p>
+                            </div>
+                        </article>
+
+                        <article class="grid-item">
+                            <div class="grid-image-wrapper">
+                                <img src="Images/flowrate_comp1.jpg" alt="Brief Demo on Flow Rate">
+                            </div>
+                            <div class="grid-caption">
+                                <h3>Flow Rate Tests</h3>
+                                <p>Demo of upping flow rate to reduce air bubbles. At 103% the logo begins to show flaws.</p>
+                            </div>
+                        </article>
+
+                        <article class="grid-item">
+                            <div class="grid-image-wrapper">
+                                <img src="Images/clear_petg_colors.jpg" alt="Side-by-side color comparison.">
+                            </div>
+                            <div class="grid-caption">
+                                <h3>Comparing different PETG brands</h3>
+                                <p>Inland(Esun) Blue, Overture Clear, IC3D Recycled Cherry.</p>
+                            </div>
+                        </article>
+                            
+                    </div>
+                </section>    
 
             <!-- Placeholder for Future Categories -->
             <section id="future" class="category-section" style="opacity: 0.6;">
                 <div class="category-header">
                     <h2>Upcoming Posts</h2>
-                    <p>More categories coming soon: Air Quality Management, Transparent PETG printing and quality control.</p>
+                    <p>More categories coming soon: Air Quality Monitoring, the BentoBox air purifier and quality control.</p>
                 </div>
             </section>
         </main>

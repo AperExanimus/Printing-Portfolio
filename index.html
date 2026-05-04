@@ -479,7 +479,6 @@ a:hover {
                  <!-- Category 4: Clear PETG -->
                  <section id="petg" class="category-section">
                     <div class="category-header">
-                        <div class="category-header">
                             <h2>Achieving Transparent PETG</h2>
                             <p>Demonstrating how to print PETG with better clarity.</p>
                             
@@ -616,7 +615,7 @@ a:hover {
                         </div>
                     </article>
 
-
+                    </div>
                 </section>        
 
             <!-- Placeholder for Future Categories -->
@@ -648,10 +647,15 @@ a:hover {
         const closeBtn = document.querySelector('.lightbox-close');
         const gridItems = document.querySelectorAll('.grid-item');
 
-        // Open lightbox when clicking an image
         gridItems.forEach(item => {
+            // SAFETY CHECK: Skip items that don't have an <img> tag (like videos)
             const img = item.querySelector('img');
-            const caption = item.querySelector('.grid-caption h3').textContent;
+            if (!img) return; 
+
+            const caption = item.querySelector('.grid-caption h3');
+            if (!caption) return;
+
+            const captionText = caption.textContent;
             
             img.style.cursor = 'pointer';
             
@@ -659,18 +663,17 @@ a:hover {
                 lightbox.style.display = 'block';
                 lightboxImg.src = img.src;
                 lightboxImg.alt = img.alt;
-                lightboxCaption.textContent = caption;
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                lightboxCaption.textContent = captionText;
+                document.body.style.overflow = 'hidden';
             });
         });
 
-        // Close lightbox
+        // Close handlers
         closeBtn.addEventListener('click', () => {
             lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.body.style.overflow = 'auto';
         });
 
-        // Close on background click
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
                 lightbox.style.display = 'none';
@@ -678,7 +681,6 @@ a:hover {
             }
         });
 
-        // Close on ESC key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && lightbox.style.display === 'block') {
                 lightbox.style.display = 'none';

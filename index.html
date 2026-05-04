@@ -230,14 +230,7 @@ a:hover {
             cursor: pointer;
             z-index: 1001;
         }
-
-        .lightbox-close:hover,
-        .lightbox-close:focus {
-            color: var(--accent-color);
-            text-decoration: none;
-            cursor: pointer;
-        }
-
+     
         footer {
             text-align: center;
             padding: 2rem;
@@ -246,6 +239,45 @@ a:hover {
             font-size: 0.9rem;
             color: #888;
         }
+
+        /* --- Side-by-Side Link Columns --- */
+.link-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem; /* Space between the two columns */
+    margin-top: 1rem;
+}
+
+.link-columns .column {
+    flex: 1; /* Each column takes equal width */
+}
+
+.link-columns ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0.5rem 0 0 0;
+}
+
+.link-columns li {
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive: Stack columns on mobile */
+@media (max-width: 768px) {
+    .link-columns {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+
+/* Make videos behave like images in the grid */
+.grid-image-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps aspect ratio, adds black bars if needed */
+    display: block;
+}
     </style>
 </head>  
 <body>
@@ -254,11 +286,14 @@ a:hover {
         <!-- Header & Navigation -->
         <header>
             <h1>3D Printing Portfolio</h1>
-            <p>Showcasing functional designs, art, and community projects.</p>
-            
+            <p>Showcasing learning and outreach projects.</p>            
             <nav>
                 <ul>
                     <li><a href="#scn">Seattle Community Network</a></li>
+                    <li><a href="#nfc">NFC</a></li>
+                    <li><a href="#qr">QR Codes</a></li>
+                    <li><a href="#petg">Clear PETG</a></li>
+                    <li><a href="#airquality">Air Quality</a></li>
                     <li><a href="#future">Upcoming Posts</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -303,7 +338,7 @@ a:hover {
                             <img src="Images/4tag_comparison.jpg" alt="Tag Lineup">
                         </div>
                         <div class="grid-caption">
-                            <h3>PLA and PETG tag comparison.</h3>
+                            <h3>PLA and PETG Tag Comparison</h3>
                             <p>Front display of black/GITD PLA and transparent blue PETG.</p>
                         </div>
                     </article>
@@ -318,8 +353,19 @@ a:hover {
                             <p>Print with GITD as the base layer. This will retain less glow since most of the filament is regular black PLA.</p>
                         </div>
                     </article>
+
+                     <!-- Item 4 -->
+                     <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <img src="Images/purge_mitigation.jpeg" alt="Printing separate squares to change over filament without causing issues to the model.">
+                        </div>
+                        <div class="grid-caption">
+                            <h3>Filament Purge Mitigation</h3>
+                            <p>Manually changing out filament mid-print will cause old filament to purge. If this happens over the model it will ruin the print. The long term fix will likely be a firmware upgrade. In the meantime I add these squares to the build in order to guide the nozzle to a safe area during filament changes.</p>
+                        </div>
+                    </article>
             
-                    <!-- Item 4 -->
+                    <!-- Item 5 -->
                     <article class="grid-item">
                         <div class="grid-image-wrapper">
                             <img src="Images/transparent_gitd.jpg" alt="Clear PETG Demo">
@@ -330,14 +376,14 @@ a:hover {
                         </div>
                     </article>
 
-                    <!-- Item 5 -->
+                    <!-- Item 6 -->
                     <article class="grid-item">
                         <div class="grid-image-wrapper">
                             <img src="Images/micro_nfc1.jpg" alt="Front Display of the Clear PETG, showing the NFC tag silhouette.">
                         </div>
                         <div class="grid-caption">
                             <h3>PETG and PLA Parts Combo, Front</h3>
-                            <p>Demo of how well GITD filament shines through the front of clear PETG.</p>
+                            <p>A photo showing how visible the NFC tag and GITD PLA are through clear PETG.</p>
                         </div>
                     </article>
 
@@ -347,7 +393,7 @@ a:hover {
             </section>
 
                  <!-- Category 2: NFC Tags -->
-                 <section id="NFC" class="category-section">
+                 <section id="nfc" class="category-section">
                     <div class="category-header">
                         <h2>NFC Tag Writing and Security</h2>
                         <p>Writing urls to NFC tags and taking additional measures for security.</p>
@@ -389,7 +435,7 @@ a:hover {
                     </section>
 
                 <!-- Category 3: QR Tags -->
-                <section id="QR" class="category-section">
+                <section id="qr" class="category-section">
                     <div class="category-header">
                         <h2>QR Code Tests</h2>
                         <p>Initially I tried to print QR codes to promote SCN. However, getting a proper resolution with a 0.4mm nozzle is not practical considering the size of the tags.</p>
@@ -429,25 +475,35 @@ a:hover {
                     </section>    
                 
                  <!-- Category 4: Clear PETG -->
-                 <section id="NFC" class="category-section">
+                 <section id="petg" class="category-section">
                     <div class="category-header">
-                        <h2>Achieving Transparent PETG</h2>
-                        <p>Demonstrating how to print PETG with better clarity.</p>
-                        <p>Filaments used: </p>
-                        <a href="https://www.microcenter.com/product/626544/inland-175mm-petg-3d-printer-filament-1kg-(22-lbs)-spool-translucent-blue">Inland PETG Plus - Translucent Blue </a>
-                        <br>
-                        <a href="https://overture3d.com/products/overture-petg?variant=46826095280382">Overture PETG - Tranpsarent </a>
-                        <br>
-                        <a href="https://www.ic3dprinters.com/shop/recycled-petg/">IC3D Recycled PETG - Translucent Cherry </a>
-
-                        <p>Resources: </p>
-                        <a href="https://www.printables.com/model/15310-how-to-print-glass">Rygar's guide on clear printing. </a>
-                        <br>
-                        <a href="https://www.cnckitchen.com/blog/transparent-fdm-3d-prints-are-clearly-stronger">CNCKitchen's blog on clear PETG prints. </a>
-                        <br>
-                        <a href="https://www.printables.com/model/273948-test-model-for-transparent-petg-printing/files">CNCKitchen's 3MF sample.</a>
-
-                    </div>
+                        <div class="category-header">
+                            <h2>Achieving Transparent PETG</h2>
+                            <p>Demonstrating how to print PETG with better clarity.</p>
+                            
+                            <!-- NEW CONTAINER FOR SIDE-BY-SIDE LINKS -->
+                            <div class="link-columns">
+                                <div class="column">
+                                    <p><strong>Filaments used:</strong></p>
+                                    <ul>
+                                        <li><a href="https://www.microcenter.com/product/626544/inland-175mm-petg-3d-printer-filament-1kg-(22-lbs)-spool-translucent-blue">Inland (eSun) PETG Plus - Translucent Blue</a></li>
+                                        <li><a href="https://overture3d.com/products/overture-petg?variant=46826095280382">Overture PETG - Transparent</a></li>
+                                        <li><a href="https://www.ic3dprinters.com/shop/recycled-petg/">IC3D Recycled PETG - Translucent Cherry</a></li>
+                                    </ul>
+                                </div>
+                        
+                                <div class="column">
+                                    <p><strong>Resources:</strong></p>
+                                    <ul>
+                                        <li><a href="https://www.printables.com/model/15310-how-to-print-glass">Rygar's guide on clear printing</a></li>
+                                        <li><a href="https://www.cnckitchen.com/blog/transparent-fdm-3d-prints-are-clearly-stronger">CNCKitchen's blog on clear PETG prints</a></li>
+                                        <li><a href="https://www.printables.com/model/273948-test-model-for-transparent-petg-printing/files">CNCKitchen's 3MF sample</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- END CONTAINER -->
+                        
+                        </div>
                 
                     <div class="photo-grid">
                         
@@ -478,12 +534,84 @@ a:hover {
                             </div>
                             <div class="grid-caption">
                                 <h3>Comparing different PETG brands</h3>
-                                <p>Inland(Esun) Blue, Overture Clear, IC3D Recycled Cherry.</p>
+                                <p>Inland Blue (100% flow rate), Overture Clear (102% flow rate), IC3D Cherry (100% flow rate).</p>
                             </div>
                         </article>
                             
                     </div>
                 </section>    
+
+              <!-- Category 5: Air Quality Considerations -->
+              <section id="airquality" class="category-section">
+                <div class="category-header">
+                    <h2>Air Quality Considerations</h2>
+                    <p>While most makers I meet seem unconcerned with air quality during PLA prints, this is something that I intend to research further. I decided that building an enclosure and air purifier would both be good practice. </p>
+                </div>
+            
+                <div class="photo-grid">
+                    <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <img src="Images/lack_enclosure_phase1.jpeg" alt="First Lack Enclosure.">
+                        </div>
+                        <div class="grid-caption">
+                            <h3>Ikea Lack Enclosure</h3>
+                            <p>This was my first attempt at an Ikea Lack enclosure. Initially I tried to apply weather stripping to the door to get a better seal. This is going to require a redesign of the printed couplers in order to hold the gasket flush though.</p>
+                        </div>
+                    </article>
+
+                    <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <img src="Images/bento_parts1.jpg" alt="Bento box parts.">
+                        </div>
+                        <div class="grid-caption">
+                            <h3>Disassembled BentoBox</h3>
+                            <p>Open display of the fan duct and carbon filter cases for the BentoBox purifier.</p>
+                        </div>
+                    </article>
+
+                    <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <img src="Images/bento_box_side.jpeg" alt="BentoBox side.">
+                        </div>
+                        <div class="grid-caption">
+                            <h3>Completed BentoBox</h3>
+                            <p>The fan case printed in clear PETG, while the rest is PLA. Eventually I intend to replace all parts with PETG for better heat resistance.</p>
+                        </div>
+                    </article>
+
+                    <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <img src="Images/spent_hepa.jpeg" alt="Used Hepa.">
+                        </div>
+                        <div class="grid-caption">
+                            <h3>Used Hepa Comparison</h3>
+                            <p>Demonstration of used hepa filters. The discoloration is likely from the carbon pellets rather than dust from the prints.</p>
+                        </div>
+                    </article>
+
+                    <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <video controls width="100%" height="100%" style="object-fit: contain;">
+                                <source src="Images/fan_demo_edit1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="grid-caption">
+                            <h3>Fan Upgrade (Loud)</h3>
+                            <p>Upgraded the 4020 fans to the very loud 4028 fans to increase airflow through the hepa filter.</p>
+                        </div>
+                    </article>
+                    <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <img src="Images/aqi_sensor.jpeg" alt="PM2.5 and VOC sensor.">
+                        </div>
+                        <div class="grid-caption">
+                            <h3>Air Quality Sensor</h3>
+                            <p>Older photo of the air quality sensor displaying the air polution outside. The goal is eventually to set this up on OctoPrint to monitor VOCs during prints as a proof of concept. It is unclear whether or not the PM2.5 sensor is precise enough to detect printer dust.</p>
+                        </div>
+                    </article>
+
+
+                </section>        
 
             <!-- Placeholder for Future Categories -->
             <section id="future" class="category-section" style="opacity: 0.6;">
@@ -506,6 +634,13 @@ a:hover {
         <div id="lightbox-caption"></div>
     </div>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
     <script>
         // Lightbox functionality
         const lightbox = document.getElementById('lightbox');
@@ -514,9 +649,13 @@ a:hover {
         const closeBtn = document.querySelector('.lightbox-close');
         const gridItems = document.querySelectorAll('.grid-item');
 
-        // Open lightbox when clicking an image
         gridItems.forEach(item => {
+            // SKIP ITEMS WITH 'no-lightbox' CLASS (Videos)
+            if (item.classList.contains('no-lightbox')) return;
+
             const img = item.querySelector('img');
+            if (!img) return; // Safety check
+
             const caption = item.querySelector('.grid-caption h3').textContent;
             
             img.style.cursor = 'pointer';
@@ -526,17 +665,16 @@ a:hover {
                 lightboxImg.src = img.src;
                 lightboxImg.alt = img.alt;
                 lightboxCaption.textContent = caption;
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                document.body.style.overflow = 'hidden';
             });
         });
 
-        // Close lightbox
+        // Close handlers
         closeBtn.addEventListener('click', () => {
             lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.body.style.overflow = 'auto';
         });
 
-        // Close on background click
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
                 lightbox.style.display = 'none';
@@ -544,7 +682,6 @@ a:hover {
             }
         });
 
-        // Close on ESC key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && lightbox.style.display === 'block') {
                 lightbox.style.display = 'none';

@@ -310,13 +310,13 @@ a:hover {
                         Model meshes updated with public domain SVGs to display the Seattle Space Needle.
                     </p>
                     <p>Resources: </p>
-                    <a href="https://seattlecommunitynetwork.org">SCN website.</a> 
+                    <a href="https://seattlecommunitynetwork.org">SCN website</a> 
                     <br>
-                    <a href="https://www.svgrepo.com/svg/220978/space-needle-seattle">Public domain vector for Seattle Space Needle.</a> 
+                    <a href="https://www.svgrepo.com/svg/220978/space-needle-seattle">Public domain vector for Seattle Space Needle</a> 
                     <br>
-                    <a href="https://www.printables.com/model/276491-nfc-tag-keychains">Original STL file by Orax.</a> 
+                    <a href="https://www.printables.com/model/276491-nfc-tag-keychains">Original STL file by Orax</a> 
                     <br>
-                    <a href="https://www.cnckitchen.com/blog/which-glow-in-the-dark-filament-is-the-best">CNCKitchen's guide on GITD filament. </a>
+                    <a href="https://www.cnckitchen.com/blog/which-glow-in-the-dark-filament-is-the-best">CNCKitchen's guide on GITD filament</a>
                 </div>
             
                 <div class="photo-grid">
@@ -398,7 +398,9 @@ a:hover {
                         <h2>NFC Tag Writing and Security</h2>
                         <p>Writing urls to NFC tags and taking additional measures for security.</p>
                         <br>
-                        <a href="https://www.cve.org/CVERecord?id=CVE-2016-3761">NFC vulnerability example on Android. </a>
+                        <a href="https://github.com/BruceDevices/firmware">"Bruce" Security Firmware for Writing to NFC</a>
+                        <br>
+                        <a href="https://www.cve.org/CVERecord?id=CVE-2016-3761">NFC vulnerability example on Android </a>
                     </div>
                 
                     <div class="photo-grid">
@@ -409,7 +411,7 @@ a:hover {
                             </div>
                             <div class="grid-caption">
                                 <h3>Tag Writing</h3>
-                                <p>Writing to tags using a M5Stack Cardputer with Bruce security firmware.</p>
+                                <p>Writing to tags using a M5Stack Cardputer with RFID/NFC module.</p>
                             </div>
                         </article>
 
@@ -545,7 +547,11 @@ a:hover {
               <section id="airquality" class="category-section">
                 <div class="category-header">
                     <h2>Air Quality Considerations</h2>
-                    <p>While most makers I meet seem unconcerned with air quality during PLA prints, this is something that I intend to research further. I decided that building an enclosure and air purifier would both be good practice. </p>
+                    <p>While most makers I meet are not concerned with air quality during PLA prints, this is something that I intend to research further. I decided that building an enclosure and air purifier would both be good practice. </p>
+
+                    <a href="https://www.printables.com/model/643482-nale-not-another-lack-enclosure">Lack Enclosure Parts</a>
+                    <br>
+                    <a href="https://shop.pimoroni.com/products/enviro?variant=31155658457171">Pimoroni Air Quality Sensor</a>
                 </div>
             
                 <div class="photo-grid">
@@ -556,6 +562,16 @@ a:hover {
                         <div class="grid-caption">
                             <h3>Ikea Lack Enclosure</h3>
                             <p>This was my first attempt at an Ikea Lack enclosure. Initially I tried to apply weather stripping to the door to get a better seal. This is going to require a redesign of the printed couplers in order to hold the gasket flush though.</p>
+                        </div>
+                    </article>
+
+                    <article class="grid-item">
+                        <div class="grid-image-wrapper">
+                            <img src="Images/lack_enclosure_phase2.jpeg" alt="Lack Enclosure 2">
+                        </div>
+                        <div class="grid-caption">
+                            <h3>Lack Enclosure Phase 2</h3>
+                            <p>Second acrylic panel added with PETG door handles. I used a soldering iron to heat insert magnets for an easy locking mechanism.</p>
                         </div>
                     </article>
 
@@ -576,16 +592,6 @@ a:hover {
                         <div class="grid-caption">
                             <h3>Completed BentoBox</h3>
                             <p>The fan case printed in clear PETG, while the rest is PLA. Eventually I intend to replace all parts with PETG for better heat resistance.</p>
-                        </div>
-                    </article>
-
-                    <article class="grid-item">
-                        <div class="grid-image-wrapper">
-                            <img src="Images/spent_hepa.jpeg" alt="Used Hepa.">
-                        </div>
-                        <div class="grid-caption">
-                            <h3>Used Hepa Comparison</h3>
-                            <p>Demonstration of used hepa filters. The discoloration is likely from the carbon pellets rather than dust from the prints.</p>
                         </div>
                     </article>
 
@@ -617,7 +623,7 @@ a:hover {
             <section id="future" class="category-section" style="opacity: 0.6;">
                 <div class="category-header">
                     <h2>Upcoming Posts</h2>
-                    <p>More categories coming soon: Air Quality Monitoring, the BentoBox air purifier and quality control.</p>
+                    <p>More categories coming soon: OctoPrint integrations and quality control.</p>
                 </div>
             </section>
         </main>
@@ -625,13 +631,6 @@ a:hover {
         <footer id="contact">
             <p>Email alias: rapid.schematic659@passmail.net</p>
         </footer>
-    </div>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-        <div id="lightbox-caption"></div>
     </div>
 
     <!-- Lightbox Modal -->
@@ -649,13 +648,9 @@ a:hover {
         const closeBtn = document.querySelector('.lightbox-close');
         const gridItems = document.querySelectorAll('.grid-item');
 
+        // Open lightbox when clicking an image
         gridItems.forEach(item => {
-            // SKIP ITEMS WITH 'no-lightbox' CLASS (Videos)
-            if (item.classList.contains('no-lightbox')) return;
-
             const img = item.querySelector('img');
-            if (!img) return; // Safety check
-
             const caption = item.querySelector('.grid-caption h3').textContent;
             
             img.style.cursor = 'pointer';
@@ -665,16 +660,17 @@ a:hover {
                 lightboxImg.src = img.src;
                 lightboxImg.alt = img.alt;
                 lightboxCaption.textContent = caption;
-                document.body.style.overflow = 'hidden';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
             });
         });
 
-        // Close handlers
+        // Close lightbox
         closeBtn.addEventListener('click', () => {
             lightbox.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            document.body.style.overflow = 'auto'; // Restore scrolling
         });
 
+        // Close on background click
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
                 lightbox.style.display = 'none';
@@ -682,6 +678,7 @@ a:hover {
             }
         });
 
+        // Close on ESC key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && lightbox.style.display === 'block') {
                 lightbox.style.display = 'none';
